@@ -1,0 +1,9 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="admin/login" extends="template.admin">
+		<put-attribute name="content" value="/views/admin/login.jsp" />
+	</definition>
+	<definition name="admin/home" extends="template.admin.withmenu">
+		<put-attribute name="content" value="/views/admin/home.jsp" />
+	</definition>
+</tiles-definitions>

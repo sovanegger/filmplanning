@@ -1,0 +1,185 @@
+@charset "UTF-8";
+
+body {
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	text-align: center;
+	background-color: #305E5E;
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	text-align: left;
+	width: 1280px;
+	background-color: #ADCFCF;
+	margin: 0 auto;
+}
+
+#header {
+	height: 25px;
+	font-size: 0.8em;
+	padding: 10px;
+}
+
+.header.left {
+	float: left;
+	width: 52%;	
+	text-align: left;
+}
+
+.header.right {
+	float: right;
+	width: 47%;
+	text-align: right;
+}
+
+#webtitle {
+	/*text-align: left;*/
+	margin-left: 5px;
+	display: inline;
+}
+
+#navigation {
+	background-color: #CBE7E7;
+	width: 280px;
+	float: left;
+	margin: 10px 10px 0 0;
+}
+
+#footer {
+	height: 100%;
+}
+
+div.messages {
+	text-align: center;
+}
+
+#navigation ul {
+	
+}
+
+#navigation ul li {
+	list-style: none outside;
+}
+
+#links {
+	text-align: center;
+	margin: 0 0 10px 0;
+}
+
+#form {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#form form {
+	display: inline-block;
+	text-align: left;
+}
+
+#form form div {
+	margin-top: 7px;
+}
+
+#content .indent {
+	margin-left: 280px;
+}
+
+#show_domain {
+	margin: 0 auto;
+	width: 325px;
+}
+
+table {
+	display: table;
+	border-collapse: separate;
+	border-spacing: 0;
+	border-width: 1px;
+	border-color: gray;
+	margin: 0 auto;
+}
+
+table td, table th {
+	padding: 0 15px 0 5px;
+}
+
+#footer_message {
+	font-size: 0.7em;
+	text-align: right;
+	margin-right: 10px;
+}
+
+.errormessage {
+	font-size: 0.8em;
+	color: #A64545;	
+}
+
+.successmessage {
+	font-size: 0.8em;
+	color: #3F963F;	
+}
+
+#login_form {
+	width: 350px;
+	margin: 0 auto;
+}
+
+.field {
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+label {
+	text-align: left;
+	display: block;
+	float: left;
+	width: 150px;
+}
+
+.btn.link {
+	font-size: 1em;
+	background-color: transparent;
+	border:none; 
+	padding:0!important;
+	text-decoration: underline;
+}
+
+.btn.link:hover,
+.btn.link:focus {
+	color: #A67145;
+	text-decoration: underline;
+	background-color: transparent;
+}
+
+.submit {
+	text-align: right;
+}
+
+span.menuexplorer {
+	width: 100%;
+	visibility: hidden;
+	display: block;
+}
+
+a {
+	color: #000000;
+}
+
+a:hover {
+	color: #A67145;
+}
+
+hr {
+	visibility: hidden;
+	clear: both;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-align: center;
+	padding: 5px;
+}
+
+select, button, input[type="button"], input[type="reset"], 
+input[type="submit"], input[type="radio"], input[type="checkbox"] {
+	cursor: pointer;
+}

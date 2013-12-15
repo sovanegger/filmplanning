@@ -1,0 +1,15 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="users/login" extends="template.classic">
+		<put-attribute name="content" value="/views/users/login.jsp" />
+	</definition>
+	<definition name="users/add" extends="template.classic">
+		<put-attribute name="content" value="/views/users/add.jsp" />
+	</definition>
+	<definition name="users/show" extends="template.classic">
+		<put-attribute name="content" value="/views/users/show.jsp" />
+	</definition>
+	<definition name="users/filmprojects" extends="template.classic">
+		<put-attribute name="content" value="/views/users/filmprojects.jsp" />
+	</definition>
+</tiles-definitions>

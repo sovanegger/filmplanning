@@ -1,0 +1,37 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="template.classic" template="/views/conf_tiles/templates/template_classic.jsp">
+		<put-attribute name="doctype" value="/views/conf_tiles/elements/doctype.jsp" />
+		<put-attribute name="head" value="/views/conf_tiles/elements/classic_user/head.jsp" />
+		<put-attribute name="header" value="/views/conf_tiles/elements/classic_user/header.jsp" />
+		<put-attribute name="footer" value="/views/conf_tiles/elements/classic_user/footer.jsp" />
+		<put-attribute name="messages" value="/views/conf_tiles/elements/classic_user/messages.jsp" />
+		<put-attribute name="content" value="" />
+	</definition>
+	
+	<definition name="template.filmproject" template="/views/conf_tiles/templates/template_filmproject.jsp">
+		<put-attribute name="doctype" value="/views/conf_tiles/elements/doctype.jsp" />
+		<put-attribute name="head" value="/views/conf_tiles/elements/classic_user/head.jsp" />
+		<put-attribute name="header" value="/views/conf_tiles/elements/classic_user/header.jsp" />
+		<put-attribute name="footer" value="/views/conf_tiles/elements/classic_user/footer.jsp" />
+		<put-attribute name="messages" value="/views/conf_tiles/elements/classic_user/messages.jsp" />
+		<put-attribute name="navigation" value="/views/conf_tiles/elements/classic_user/navigation.jsp" />
+		<put-attribute name="content" value="" />
+	</definition>
+	
+	<definition name="template.admin" template="/views/conf_tiles/templates/template_admin.jsp">
+		<put-attribute name="doctype" value="/views/conf_tiles/elements/doctype.jsp" />
+		<put-attribute name="head" value="/views/conf_tiles/elements/admin/head.jsp" />
+		<put-attribute name="header" value="" />
+		<put-attribute name="footer" value="/views/conf_tiles/elements/admin/footer.jsp" />
+		<put-attribute name="messages" value="/views/conf_tiles/elements/admin/messages.jsp" />
+		<put-attribute name="navigation" value="" />
+		<put-attribute name="content" value="" />
+	</definition>
+	
+	<definition name="template.admin.withmenu" extends="template.admin">
+		<put-attribute name="header" value="/views/conf_tiles/elements/admin/header.jsp" />
+		<put-attribute name="navigation" value="/views/conf_tiles/elements/admin/navigation.jsp" />
+	</definition>
+</tiles-definitions>

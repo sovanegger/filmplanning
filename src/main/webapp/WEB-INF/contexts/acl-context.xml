@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+	
+<!-- 	<bean id="aclService" class="org.springframework.security.acls.jdbc.JdbcMutableAclService"> -->
+<!-- 		<constructor-arg ref="dataSource"/> -->
+<!-- 		<constructor-arg ref="lookupStrategy"/> -->
+<!-- 		<constructor-arg ref="aclCache"/> -->
+<!-- 		<property name="classIdentityQuery" value="select currval(pg_get_serial_sequence('acl_class', 'id'))"/> -->
+<!-- 		<property name="sidIdentityQuery" value="select currval(pg_get_serial_sequence('acl_sid', 'id'))"/> -->
+<!-- 		<property name="classIdentityQuery" value="SELECT @@IDENTITY"/> mysql -->
+<!-- 		<property name="sidIdentityQuery" value="SELECT @@IDENTITY"/> mysql -->
+<!-- 	</bean> -->
+	
+	<bean id="aclService" class="cz.tomsovsky.bc.filmplanning.security.JdbcMutableAclWithClassEntryService">
+		<constructor-arg ref="dataSource"/>
+		<constructor-arg ref="lookupStrategy"/>
+		<constructor-arg ref="aclCache"/>
+		<property name="classIdentityQuery" value="select currval(pg_get_serial_sequence('acl_class', 'id'))"/>
+		<property name="sidIdentityQuery" value="select currval(pg_get_serial_sequence('acl_sid', 'id'))"/>
+	</bean>
+	
+	<bean id="expressionHandler" class="org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler">
+		<!-- To use hasPermission() in expressions, configure a PermissionEvaluator -->
+		<property name="permissionEvaluator" ref="permissionEvaluator" />
+		<property name = "roleHierarchy" ref="roleHierarchy"/>
+	</bean>
+	
+	<bean id="permissionEvaluator" class="org.springframework.security.acls.AclPermissionEvaluator">
+		<constructor-arg ref="aclService"/>
+	</bean>
+	
+	<bean id="roleHierarchy"  class="org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl">
+		<property name="hierarchy">
+			<value>
+				ROLE_ADMIN > ROLE_USER
+			</value>
+		</property>
+	</bean>
+	 
+	<bean id="lookupStrategy" class="org.springframework.security.acls.jdbc.BasicLookupStrategy">
+		<constructor-arg ref="dataSource"/>
+		<constructor-arg ref="aclCache"/>
+		<constructor-arg ref="aclAuthorizationStrategy"/>
+		<constructor-arg>
+			<bean class="org.springframework.security.acls.domain.ConsoleAuditLogger"/>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="aclCache" class="org.springframework.security.acls.domain.EhCacheBasedAclCache">
+		<constructor-arg>
+			<bean class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+				<property name="cacheManager">
+					<bean class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"/>
+				</property>
+				<property name="cacheName" value="aclCache"/>
+			</bean>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="aclAuthorizationStrategy" class="org.springframework.security.acls.domain.AclAuthorizationStrategyImpl">
+        <constructor-arg>
+            <list>
+                <bean class="cz.tomsovsky.bc.filmplanning.dto.Authority">
+                	<property name="authority" value="ROLE_ADMIN" />
+                </bean>
+                <bean class="cz.tomsovsky.bc.filmplanning.dto.Authority">
+                	<property name="authority" value="ROLE_ADMIN" />
+                </bean>
+                <bean class="cz.tomsovsky.bc.filmplanning.dto.Authority">
+                	<property name="authority" value="ROLE_ADMIN" />
+                </bean>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>

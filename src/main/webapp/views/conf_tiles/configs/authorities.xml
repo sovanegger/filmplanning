@@ -1,0 +1,15 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="authorities/list" extends="template.admin.withmenu">
+		<put-attribute name="content" value="/views/authorities/list.jsp" />
+	</definition>
+	<definition name="authorities/add" extends="template.admin.withmenu">
+		<put-attribute name="content" value="/views/authorities/add.jsp" />
+	</definition>
+	<definition name="authorities/edit" extends="template.admin.withmenu">
+		<put-attribute name="content" value="/views/authorities/edit.jsp" />
+	</definition>
+	<definition name="authorities/show" extends="template.admin.withmenu">
+		<put-attribute name="content" value="/views/authorities/show.jsp" />
+	</definition>
+</tiles-definitions>

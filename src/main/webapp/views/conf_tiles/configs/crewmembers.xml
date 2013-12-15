@@ -1,0 +1,15 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="crewmembers/list" extends="template.filmproject">
+		<put-attribute name="content" value="/views/crewmembers/list.jsp" />
+	</definition>
+	<definition name="crewmembers/add" extends="template.filmproject">
+		<put-attribute name="content" value="/views/crewmembers/add.jsp" />
+	</definition>
+	<definition name="crewmembers/edit" extends="template.filmproject">
+		<put-attribute name="content" value="/views/crewmembers/edit.jsp" />
+	</definition>
+	<definition name="crewmembers/show" extends="template.filmproject">
+		<put-attribute name="content" value="/views/crewmembers/show.jsp" />
+	</definition>
+</tiles-definitions>

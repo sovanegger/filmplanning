@@ -1,0 +1,18 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="filmprojects/screenplay" extends="template.filmproject">
+		<put-attribute name="content" value="/views/filmprojects/screenplay.jsp" />
+	</definition>
+	<definition name="filmprojects/add" extends="template.classic">
+		<put-attribute name="content" value="/views/filmprojects/add.jsp" />
+	</definition>
+	<definition name="filmprojects/edit" extends="template.filmproject">
+		<put-attribute name="content" value="/views/filmprojects/edit.jsp" />
+	</definition>
+	<definition name="filmprojects/show" extends="template.filmproject">
+		<put-attribute name="content" value="/views/filmprojects/show.jsp" />
+	</definition>
+	<definition name="filmprojects/crewmembers" extends="template.filmproject">
+		<put-attribute name="content" value="/views/filmprojects/crewmembers.jsp" />
+	</definition>
+</tiles-definitions>
